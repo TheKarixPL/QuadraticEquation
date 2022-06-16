@@ -1,0 +1,16 @@
+﻿@model TheKarixPL.QuadraticEquation.ViewModels.StandardFormViewModel
+
+<div class="input-form">
+    <h3 class="centered">Standard form</h3>
+    <form asp-action="StandardForm" method="get">
+        <input type="number" asp-for="A">
+        x<sup>2</sup>+
+        <input type="number" asp-for="B">
+        x+
+        <input type="number" asp-for="C">
+        <br>
+        <div class="centered">
+            <button type="submit">Calculate</button>
+        </div>
+    </form>
+</div>

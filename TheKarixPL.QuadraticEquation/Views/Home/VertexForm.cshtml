@@ -1,0 +1,16 @@
+﻿@model TheKarixPL.QuadraticEquation.ViewModels.VertexFormViewModel
+
+<div class="input-form">
+    <h3 class="centered">Vertex form</h3>
+    <form asp-action="VertexForm" method="get">
+        <input type="number" asp-for="A">
+        (x-
+        <input type="number" asp-for="P">
+        )<sup>2</sup>+
+        <input type="number" asp-for="Q">
+        <br>
+        <div class="centered">
+            <button type="submit">Calculate</button>
+        </div>
+    </form>
+</div>

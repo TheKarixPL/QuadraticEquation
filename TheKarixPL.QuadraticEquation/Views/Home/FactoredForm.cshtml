@@ -1,0 +1,17 @@
+﻿@model TheKarixPL.QuadraticEquation.ViewModels.FactoredFormViewModel
+
+<div class="input-form">
+    <h3 class="centered">Factored form</h3>
+    <form asp-action="FactoredForm" method="get">
+        <input type="number" asp-for="A">
+        (x-
+        <input type="number" asp-for="X1">
+        )(x-
+        <input type="number" asp-for="X2">
+        )
+        <br>
+        <div class="centered">
+            <button type="submit">Calculate</button>
+        </div>
+    </form>
+</div>
