@@ -3,7 +3,7 @@
 namespace TheKarixPL.QuadraticEquation.Library;
 
 /// <summary>
-/// Result of operation is complex number
+/// Thrown if result of operation is complex number
 /// </summary>
 public class ComplexResultException : ArithmeticException
 {

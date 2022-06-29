@@ -2,6 +2,9 @@
 
 namespace TheKarixPL.QuadraticEquation.Library;
 
+/// <summary>
+/// Exception thrown if quadratic equation is invalid
+/// </summary>
 public class InvalidQuadraticEquationException : ArithmeticException
 {
     public InvalidQuadraticEquationException()

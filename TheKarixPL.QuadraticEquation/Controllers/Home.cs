@@ -6,7 +6,7 @@ namespace TheKarixPL.QuadraticEquation.Controllers;
 
 public class HomeController : Controller
 {
-    protected readonly GraphService GraphService;
+    private readonly GraphService GraphService;
 
     public HomeController(GraphService graphService)
     {
@@ -14,16 +14,30 @@ public class HomeController : Controller
     }
     
     // GET
+    /// <summary>
+    /// Get main page
+    /// </summary>
+    /// <returns>Action result with main page</returns>
     [HttpGet]
     public ActionResult Index()
     {
         return View();
     }
-
+    
+    /// <summary>
+    /// Get standard form result
+    /// </summary>
+    /// <param name="f">Standard form ViewModel</param>
+    /// <returns>Result view</returns>
     [HttpGet]
     public ActionResult StandardForm(StandardFormViewModel f)
         => View("Result", Library.QuadraticEquation.FromStandardForm(f.A, f.B, f.C));
-
+    
+    /// <summary>
+    /// Get vertex form result
+    /// </summary>
+    /// <param name="f">Vertex form ViewModel</param>
+    /// <returns>Result view</returns>
     [HttpGet]
     public ActionResult VertexForm(VertexFormViewModel f)
     {
@@ -31,13 +45,23 @@ public class HomeController : Controller
         return RedirectToAction("StandardForm", new StandardFormViewModel { A = equation.A, B = equation.B, C = equation.C });
     }
     
+    /// <summary>
+    /// Get factored form result
+    /// </summary>
+    /// <param name="f">Factored form ViewModel</param>
+    /// <returns>Result view</returns>
     [HttpGet]
     public ActionResult FactoredForm(FactoredFormViewModel f)
     {
         var equation = Library.QuadraticEquation.FromFactoredForm(f.A, f.X1, f.X2);
         return RedirectToAction("StandardForm", new StandardFormViewModel { A = equation.A, B = equation.B, C = equation.C });
     }
-
+    
+    /// <summary>
+    /// Get chart image
+    /// </summary>
+    /// <param name="f">Standard form ViewModel</param>
+    /// <returns>Chart image</returns>
     [HttpGet]
     public ActionResult Chart(StandardFormViewModel f)
     {

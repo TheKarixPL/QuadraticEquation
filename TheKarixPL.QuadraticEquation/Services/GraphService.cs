@@ -6,8 +6,20 @@ using SixLabors.ImageSharp.Processing;
 
 namespace TheKarixPL.QuadraticEquation.Services;
 
+/// <summary>
+/// Service which generates graph image
+/// </summary>
 public class GraphService
 {
+    /// <summary>
+    /// Generate graph and save it to image
+    /// </summary>
+    /// <param name="a">a</param>
+    /// <param name="b">b</param>
+    /// <param name="c">c</param>
+    /// <param name="height">Height of image</param>
+    /// <param name="width">Width of image</param>
+    /// <param name="output">Stream to write image</param>
     public void GenerateGraph(double a, double b, double c, int height, int width, Stream output)
     {
         using var image = new Image<Rgba32>(width, height);
